@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2024.06.08
+* 2024.07.12
 * externals
 
 1. DESCRIPTION
@@ -45,7 +45,7 @@ CAUTION:
 To convert `vcstool` repositories file to Git `.gitmodules` format you can use
 these scripts:
 
-https://github.com/andry81/gitcmd/tree/HEAD/vcstool/git_gen_gitmodules.sh
+https://github.com/andry81/gitcmd/tree/HEAD/scripts/vcstool/git_gen_gitmodules.sh
 https://github.com/andry81/gituserbin/tree/HEAD/gen-vcstool-gitmodules.sh
 
 -------------------------------------------------------------------------------
