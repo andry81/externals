@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2024.07.12
+* 2025.01.07
 * externals
 
 1. DESCRIPTION
@@ -16,28 +16,27 @@ not described in detail in those projects.
 -------------------------------------------------------------------------------
 2. EXTERNALS
 -------------------------------------------------------------------------------
-All project externals are declared in `.externals*` files.
+All project externals are declared in `.externals*` file(s).
 
-To checkout externals you must use the
-[vcstool](https://github.com/dirk-thomas/vcstool) python module.
+To clone only required directories of externals, you must use `vcstool` python
+module with the sparse checkout feature and `.externals*` file(s), otherwise
+the `git clone --recurse-submodules` would use `.gitmodules` (if has any) and
+checkout all modules recursively and completely, including all subdirectories
+which is not required to checkout.
+
+To use the sparse checkout feature (partial checkout) you must install from a
+forked repository:
+
+>
+python -m pip install git+https://github.com/aaronplusone/vcstool@feature-sparse-checkouts
+
+  Or
+
+>
+python -m pip install git+https://github.com/plusone-robotics/vcstool@por_master
 
 NOTE:
-  To install the module from the git repository:
-
-  >
-  python -m pip install git+https://github.com/dirk-thomas/vcstool
-
-CAUTION:
-  To use the sparse checkout feature (partial checkout) you must use a forked
-  repository:
-
-  >
-  python -m pip install git+https://github.com/aaronplusone/vcstool@feature-sparse-checkouts
-
-    Or
-
-  >
-  python -m pip install git+https://github.com/plusone-robotics/vcstool@por_master
+  Original repository: https://github.com/dirk-thomas/vcstool
 
 -------------------------------------------------------------------------------
 2.1. Git `.gitmodules` support
