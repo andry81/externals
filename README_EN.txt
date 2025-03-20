@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.01.07
+* 2025.03.20
 * externals
 
 1. DESCRIPTION
@@ -38,6 +38,10 @@ python -m pip install git+https://github.com/plusone-robotics/vcstool@por_master
 NOTE:
   Original repository: https://github.com/dirk-thomas/vcstool
 
+NOTE:
+  There is another fork with continue of original repository development:
+  https://github.com/MaxandreOgeret/vcstool2
+
 -------------------------------------------------------------------------------
 2.1. Git `.gitmodules` support
 -------------------------------------------------------------------------------
@@ -45,7 +49,7 @@ To convert `vcstool` repositories file to Git `.gitmodules` format you can use
 these scripts:
 
 https://github.com/andry81/gitcmd/tree/HEAD/scripts/vcstool/git_gen_gitmodules.sh
-https://github.com/andry81/gituserbin/tree/HEAD/gen-vcstool-gitmodules.sh
+https://github.com/andry81/gituserbin/tree/HEAD/scripts/gen-vcstool-gitmodules.sh
 
 -------------------------------------------------------------------------------
 2.1.1. `git_gen_gitmodules.sh` usage examples
