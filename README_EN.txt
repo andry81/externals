@@ -1,11 +1,12 @@
 * README_EN.txt
-* 2025.03.20
+* 2025.03.21
 * externals
 
 1. DESCRIPTION
 2. EXTERNALS
-2.1. Git `.gitmodules` support
-2.1.1. `git_gen_gitmodules.sh` usage examples
+2.1. Git modules experience
+2.2. Git `.gitmodules` support
+2.2.1. `git_gen_gitmodules.sh` usage examples
 
 -------------------------------------------------------------------------------
 1. DESCRIPTION
@@ -43,7 +44,12 @@ NOTE:
   https://github.com/MaxandreOgeret/vcstool2
 
 -------------------------------------------------------------------------------
-2.1. Git `.gitmodules` support
+2.1. Git modules experience
+-------------------------------------------------------------------------------
+https://gist.github.com/andry81/b0000d2ddfa890f7ac68f1cabb6c1978
+
+-------------------------------------------------------------------------------
+2.2. Git `.gitmodules` support
 -------------------------------------------------------------------------------
 To convert `vcstool` repositories file to Git `.gitmodules` format you can use
 these scripts:
@@ -52,7 +58,7 @@ https://github.com/andry81/gitcmd/tree/HEAD/scripts/vcstool/git_gen_gitmodules.s
 https://github.com/andry81/gituserbin/tree/HEAD/scripts/gen-vcstool-gitmodules.sh
 
 -------------------------------------------------------------------------------
-2.1.1. `git_gen_gitmodules.sh` usage examples
+2.2.1. `git_gen_gitmodules.sh` usage examples
 -------------------------------------------------------------------------------
 
 1. Convert each `.externals*` file into exising single `.gitmodules*` file.
