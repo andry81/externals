@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.06.06
+* 2025.06.11
 * externals
 
 1. DESCRIPTION
@@ -39,10 +39,14 @@ python -m pip install git+https://github.com/plusone-robotics/vcstool@por_master
 NOTE:
   Original repository: https://github.com/dirk-thomas/vcstool
 
-NOTE:
-  There is another forks with continue of original repository development:
+  Discussion: `Status of vcstool` : https://github.com/dirk-thomas/vcstool/issues/242
 
-  * https://github.com/MaxandreOgeret/vcstool2
+NOTE:
+  There is another forks with or without continue of original repository
+  development:
+
+  * https://github.com/aaronplusone/vcstool/tree/feature-sparse-checkouts  
+  * https://github.com/MaxandreOgeret/vcstool2 (https://pypi.org/project/vcstool2/)
   * https://github.com/ros-infrastructure/vcstool
 
 NOTE:
