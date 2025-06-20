@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.06.11
+* 2025.06.20
 * externals
 
 1. DESCRIPTION
@@ -18,6 +18,30 @@ not described in detail in those projects.
 2. EXTERNALS
 -------------------------------------------------------------------------------
 All project externals are declared in `.externals*` file(s).
+
+Basically, you have to checkout the main `.externals` file and if does exist
+others with a suffix `.externals-*`, then select those you need additionally.
+
+NOTE:
+  All `.externals*` files must not intersect to be able to take ALL external
+  dependencies including those you don't need to. This is by design to ease the
+  maintainability and the testing.
+
+For example, if there is a list of files:
+
+  * .externals
+  * .externals-winxp
+  * .externals-win7
+
+Then you have to checkout either:
+
+  * .externals
+  * .externals-win7
+
+  OR
+
+  * .externals
+  * .externals-winxp
 
 To clone only required directories of externals, you must use `vcstool` python
 module with the sparse checkout feature and `.externals*` file(s), otherwise
