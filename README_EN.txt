@@ -62,6 +62,8 @@ NOTE:
   Some forks may does not exist as forks, so you won't find them using a fork
   related tree search. The only way to find is to use a broad Git search using
   keywords.
+  See for details: `Forks trace or filtering is broken (forks segmentation)` :
+  https://github.com/orgs/community/discussions/173970
 
 >
 python -m pip install git+https://github.com/aaronplusone/vcstool@feature-sparse-checkouts
@@ -80,10 +82,10 @@ NOTE:
   There is other forks with or without continue of original repository
   development:
 
-  * https://github.com/ros-infrastructure/vcs2l/
   * https://github.com/aaronplusone/vcstool/tree/feature-sparse-checkouts  
   * https://github.com/MaxandreOgeret/vcstool2 (https://pypi.org/project/vcstool2/)
   * https://github.com/ros-infrastructure/vcstool
+    (https://github.com/ros-infrastructure/vcs2l)
 
 NOTE:
   Mine list of `vcstool` related forks:
