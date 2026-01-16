@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.06.20
+* 2026.01.16
 * externals
 
 1. DESCRIPTION
@@ -43,14 +43,25 @@ Then you have to checkout either:
   * .externals
   * .externals-winxp
 
-To clone only required directories of externals, you must use `vcstool` python
-module with the sparse checkout feature and `.externals*` file(s), otherwise
-the `git clone --recurse-submodules` would use `.gitmodules` (if has any) and
+To clone only required directories of externals, you must use `vcstool` (or
+probably another name related to a fork you are chosen) python module with the
+sparse checkout feature and `.externals*` file(s), otherwise the
+`git clone --recurse-submodules` would use `.gitmodules` (if has any) and
 checkout all modules recursively and completely, including all subdirectories
 which is not required to checkout.
 
 To use the sparse checkout feature (partial checkout) you must install from a
 forked repository:
+
+NOTE:
+  There is always be forks that has ahead commits with new functionality or
+  even a standalone development. You have to investigate on your own to find
+  the best variant.
+
+NOTE:
+  Some forks may does not exist as forks, so you won't find them using a fork
+  related tree search. The only way to find is to use a broad Git search using
+  keywords.
 
 >
 python -m pip install git+https://github.com/aaronplusone/vcstool@feature-sparse-checkouts
@@ -66,9 +77,10 @@ NOTE:
   Discussion: `Status of vcstool` : https://github.com/dirk-thomas/vcstool/issues/242
 
 NOTE:
-  There is another forks with or without continue of original repository
+  There is other forks with or without continue of original repository
   development:
 
+  * https://github.com/ros-infrastructure/vcs2l/
   * https://github.com/aaronplusone/vcstool/tree/feature-sparse-checkouts  
   * https://github.com/MaxandreOgeret/vcstool2 (https://pypi.org/project/vcstool2/)
   * https://github.com/ros-infrastructure/vcstool
