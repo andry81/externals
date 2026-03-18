@@ -1,22 +1,25 @@
 * README_EN.txt
-* 2026.01.16
+* 2026.03.18
 * externals
 
 1. DESCRIPTION
 2. EXTERNALS
-2.1. Git modules experience
-2.2. Git `.gitmodules` support
-2.2.1. `git_gen_gitmodules.sh` usage examples
+2.1. Sparse checkout
+3. MANAGEMENT
+4. GIT MODULES
+4.1. `git_gen_gitmodules.sh` usage examples
 
 -------------------------------------------------------------------------------
 1. DESCRIPTION
 -------------------------------------------------------------------------------
+
 Description of global external dependencies applicable to multiple projects and
 not described in detail in those projects.
 
 -------------------------------------------------------------------------------
 2. EXTERNALS
 -------------------------------------------------------------------------------
+
 All project externals are declared in `.externals*` file(s).
 
 Basically, you have to checkout the main `.externals` file and if does exist
@@ -43,12 +46,51 @@ Then you have to checkout either:
   * .externals
   * .externals-winxp
 
-To clone only required directories of externals, you must use `vcstool` (or
-probably another name related to a fork you are chosen) python module with the
-sparse checkout feature and `.externals*` file(s), otherwise the
-`git clone --recurse-submodules` would use `.gitmodules` (if has any) and
-checkout all modules recursively and completely, including all subdirectories
-which is not required to checkout.
+To clone only required directories of externals, you should use the management
+tool that the project is dependent on.
+
+-------------------------------------------------------------------------------
+2.1. Sparse checkout
+-------------------------------------------------------------------------------
+
+All or several external files can contain sub directories per each repository
+to checkout only a required set of directories instead of a whole repository.
+
+To support a correct scripts initialization each directory can contain
+`__init__` sub directory which indicates a directory initialization logic.
+But because there is no clear distinction between an `__init__` directory and a
+script has used it, then you have to checkout `__init__` together with the
+parent directory including all parent `__init__` directory up to the root.
+
+For example, if you check out these directories list non recursively
+(excluding sub directories):
+
+A/B
+A/C/D
+A/C/E/F
+
+Then you have to checkout these instead:
+
+__init__
+A/__init__
+A/B
+A/B/__init__
+A/C/__init__
+A/C/D
+A/C/D/__init__
+A/C/E/__init__
+A/C/E/F
+A/C/E/F/__init__
+
+-------------------------------------------------------------------------------
+3. MANAGEMENT
+-------------------------------------------------------------------------------
+
+These set of management tools are used to maintain the externals:
+
+1. The `vcstool` python module.
+
+Requires the sparse checkout feature to be built in or integrated.
 
 To use the sparse checkout feature (partial checkout) you must install from a
 forked repository:
@@ -102,13 +144,19 @@ NOTE:
     (sorted by stars and ahead commits)
 
 -------------------------------------------------------------------------------
-2.1. Git modules experience
+4. GIT MODULES
 -------------------------------------------------------------------------------
+
+The `git clone --recurse-submodules` would use `.gitmodules` (if has any) and
+checkout all modules recursively and completely, including all subdirectories
+which is not required to checkout.
+
+See details on Git modules usage experience versus the external management
+tools here:
+
+`Git modules experience` :
 https://gist.github.com/andry81/b0000d2ddfa890f7ac68f1cabb6c1978
 
--------------------------------------------------------------------------------
-2.2. Git `.gitmodules` support
--------------------------------------------------------------------------------
 To convert `vcstool` repositories file to Git `.gitmodules` format you can use
 these scripts:
 
@@ -116,10 +164,10 @@ https://github.com/andry81/gitcmd/tree/HEAD/scripts/vcstool/git_gen_gitmodules.s
 https://github.com/andry81/gituserbin/tree/HEAD/scripts/gen-vcstool-gitmodules.sh
 
 -------------------------------------------------------------------------------
-2.2.1. `git_gen_gitmodules.sh` usage examples
+4.1. `git_gen_gitmodules.sh` usage examples
 -------------------------------------------------------------------------------
 
-1. Convert each `.externals*` file into exising single `.gitmodules*` file.
+1. Convert each `.externals*` file into existing single `.gitmodules*` file.
 
   >
   cd myrepo/path
