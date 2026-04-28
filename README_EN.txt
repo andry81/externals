@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2026.03.18
+* 2026.04.28
 * externals
 
 1. DESCRIPTION
@@ -53,8 +53,8 @@ tool that the project is dependent on.
 2.1. Sparse checkout
 -------------------------------------------------------------------------------
 
-All or several external files can contain sub directories per each repository
-to checkout only a required set of directories instead of a whole repository.
+All or several external files can contain sub directories to checkout only a
+required set of directories instead of a whole repository.
 
 To support a correct scripts initialization each directory can contain
 `__init__` sub directory which indicates a directory initialization logic.
